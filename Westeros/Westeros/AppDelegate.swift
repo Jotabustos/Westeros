@@ -18,10 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible() // Si window tiene un valor, hazmelo visible. Si es nil, no hace nada
+        // Si window tiene un valor, hazmelo visible. Si es nil, no hace nada
         window?.backgroundColor = .cyan
-        let rootViewController = UIViewController()
+        
+        // 1. Creamos el Modelo
+        let starkSigil = Sigil(image: UIImage(named: "codeIsComing.png")!, description: "Lobo Huargo")
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
+        // 2. Creamos el Controlador
+        
+        let starkViewController = HouseDetailViewController(model: starkHouse)
+        
+        
+        // Asignamos el rootVC
+        let rootViewController = starkViewController
         window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible() 
         return true
     }
 

@@ -70,8 +70,23 @@ class HouseTests: XCTestCase {
         
         // Meter validacion de la misma casa
         
-        
-        print("aloha")
-        print(starkHouse)
+    }
+    
+    func testHouseEquality() {
+        // 1. Identidad
+        XCTAssertEqual(starkHouse, starkHouse)
+        // 2. Igualdad
+        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
+        XCTAssertEqual(jinxed, starkHouse)
+        // 3. Desigualdad
+        XCTAssertNotEqual(lannisterHouse, starkHouse)
+    }
+    
+    func testHouseHashable() {
+        XCTAssertNotNil(starkHouse.hashValue)
+    }
+    
+    func testHouseComparaison() {
+        XCTAssertLessThan(lannisterHouse, starkHouse)
     }
 }

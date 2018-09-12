@@ -41,6 +41,7 @@ final class Person {
 
 }
 
+// MARK: - Extensions
 
 extension Person {
     var fullName: String {

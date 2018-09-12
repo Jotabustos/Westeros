@@ -27,6 +27,9 @@ class HouseDetailViewController: UIViewController {
         self.model = model
         super.init(nibName: nil, bundle: nil) // Al ponerle nil, te busca el XIB y el bundle main (Bundle.main)
         
+        // Si quieres utilizas alguna propiedad de tu superclase
+        title = model.name
+        
     }
     // Chapuza de los de Cupertino relacionada con los nil
     // Este init es el que utilizan los storyboards
@@ -43,5 +46,6 @@ class HouseDetailViewController: UIViewController {
         houseNameLabel.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = model.words
+        
     }
 }

@@ -21,16 +21,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Si window tiene un valor, hazmelo visible. Si es nil, no hace nada
         window?.backgroundColor = .cyan
         
-        // 1. Creamos el Modelo
-        let starkSigil = Sigil(image: UIImage(named: "codeIsComing.png")!, description: "Lobo Huargo")
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
-        // 2. Creamos el Controlador
+        // 1. Creamos los Modelos
+        let houses = Repository.local.houses
+        // 2. Creamos los controladores
         
-        let starkViewController = HouseDetailViewController(model: starkHouse)
+        var controllers = [UIViewController]()
         
+        for house in houses {
+            controllers.append(HouseDetailViewController(model: house).wrapperInNavigation())
+        }
         
-        // Asignamos el rootVC
-        let rootViewController = starkViewController
+
+        // Creamos el combinador
+        let tabBarViewController = UITabBarController()
+        tabBarViewController.viewControllers = controllers
+        
+         // Asignamos el rootVC
+        let rootViewController = tabBarViewController
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible() 
         return true

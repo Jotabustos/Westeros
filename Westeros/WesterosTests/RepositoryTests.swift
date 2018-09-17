@@ -11,8 +11,10 @@ import XCTest
 
 class RepositoryTests: XCTestCase {
 
+    var localHouses: [House]!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+       localHouses = Repository.local.houses
     }
 
     func testLocalRepositoryExistence() {
@@ -20,9 +22,27 @@ class RepositoryTests: XCTestCase {
     }
     
     func testLocalRepositoryHousesCreation(){
-        let houses = Repository.local.houses
-        XCTAssertNotNil(houses)
-        XCTAssertGreaterThan(houses.count, 0)
+        XCTAssertNotNil(localHouses)
+        XCTAssertEqual(localHouses.count, 3)
+    }
+    
+    func testLocalRepositoryReturnsSortedArrayOfHouses(){
+        XCTAssertEqual(localHouses, localHouses.sorted())
+    }
+    
+    func testLocalRepositoryReturnsHousesByNameCaseInsensitive(){
+        let stark = Repository.local.house(named: "sTark")
+        XCTAssertEqual(stark?.name, "Stark")
+        let keepcoding = Repository.local.house(named: "KeepCoding")
+        XCTAssertNil(keepcoding)
+    }
+    
+    func testLocalRepositoryHouseFiltering(){
+        var filtered = Repository.local.houses { $0.count == 1 }
+        XCTAssertEqual(filtered.count, 1)
+        
+        filtered = Repository.local.houses {$0.count == 100} // Devuelve un array vacio, no nil
+        XCTAssertTrue(filtered.isEmpty)
     }
 
 }

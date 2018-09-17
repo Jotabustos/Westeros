@@ -25,6 +25,7 @@ class HouseDetailViewController: UIViewController {
     init(model: House){
         // Primero limpio mi propio desorden. ( a.k.a., le doy valor a mis propias propiedades)
         self.model = model
+        // Luego llamas a super
         super.init(nibName: nil, bundle: nil) // Al ponerle nil, te busca el XIB y el bundle main (Bundle.main)
         
         // Si quieres utilizas alguna propiedad de tu superclase

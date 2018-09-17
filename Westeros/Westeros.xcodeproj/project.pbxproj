@@ -44,6 +44,7 @@
 		840570492149B9F400BDCDB4 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		8405704B2149BC0800BDCDB4 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		8405704E2149BCE200BDCDB4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		840570502149C40600BDCDB4 /* FuncionesDeAltoNivelYClausuras.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = FuncionesDeAltoNivelYClausuras.playground; path = ../FuncionesDeAltoNivelYClausuras.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		849036C92146688F005201BD /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849036CC2146688F005201BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849036D321466890005201BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		849036C02146688F005201BD = {
 			isa = PBXGroup;
 			children = (
+				840570502149C40600BDCDB4 /* FuncionesDeAltoNivelYClausuras.playground */,
 				849036CB2146688F005201BD /* Westeros */,
 				849036E021466890005201BD /* WesterosTests */,
 				849036CA2146688F005201BD /* Products */,

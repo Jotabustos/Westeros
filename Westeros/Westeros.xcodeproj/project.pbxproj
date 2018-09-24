@@ -20,6 +20,7 @@
 		8414C7D12150339A00077E80 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414C7CF2150339A00077E80 /* WikiViewController.swift */; };
 		8414C7D22150339A00077E80 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8414C7D02150339A00077E80 /* WikiViewController.xib */; };
 		84425B692152AC90007F4131 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84425B682152AC90007F4131 /* Constants.swift */; };
+		84425B6B21594DE2007F4131 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84425B6A21594DE2007F4131 /* Notification+Name.swift */; };
 		849036CD2146688F005201BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849036CC2146688F005201BD /* AppDelegate.swift */; };
 		849036D421466890005201BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849036D321466890005201BD /* Assets.xcassets */; };
 		849036D721466890005201BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849036D521466890005201BD /* LaunchScreen.storyboard */; };
@@ -57,6 +58,7 @@
 		8414C7CF2150339A00077E80 /* WikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		8414C7D02150339A00077E80 /* WikiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		84425B682152AC90007F4131 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84425B6A21594DE2007F4131 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		849036C92146688F005201BD /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849036CC2146688F005201BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849036D321466890005201BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				840570492149B9F400BDCDB4 /* UIViewController+Navigation.swift */,
+				84425B6A21594DE2007F4131 /* Notification+Name.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				8405704A2149B9F400BDCDB4 /* UIViewController+Navigation.swift in Sources */,
 				840570462149A32100BDCDB4 /* HouseDetailViewController.swift in Sources */,
 				849036F221467F3B005201BD /* Sigil.swift in Sources */,
+				84425B6B21594DE2007F4131 /* Notification+Name.swift in Sources */,
 				84EA1D39215189AD00F92B06 /* MemberListViewController.swift in Sources */,
 				849036F0214675FF005201BD /* House.swift in Sources */,
 				849036CD2146688F005201BD /* AppDelegate.swift in Sources */,

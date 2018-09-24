@@ -11,7 +11,7 @@ import UIKit
 class HouseDetailViewController: UIViewController {
 
     // MARK: - Properties
-    let model: House
+    var model: House
     
     // MARK: - Outlets
     @IBOutlet weak var houseNameLabel: UILabel!
@@ -19,7 +19,6 @@ class HouseDetailViewController: UIViewController {
     @IBOutlet weak var sigilImageView: UIImageView!
     
     @IBOutlet weak var wordsLabel: UILabel!
-    
  
     // MARK: - Initialization
     init(model: House){
@@ -40,6 +39,9 @@ class HouseDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
+        
+        setupUI()
+        
         syncModelWithView()
     }
     
@@ -47,6 +49,40 @@ class HouseDetailViewController: UIViewController {
         houseNameLabel.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = model.words
+        title = model.name
         
     }
+    
+    func setupUI(){
+        // Crear un boton
+        let wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: self, action: #selector(displayWiki))
+        
+        let membersButton = UIBarButtonItem(title: "Members", style: .plain, target: self, action: #selector(displayMembers))
+        // Añadir el boton
+        navigationItem.rightBarButtonItem = wikiButton
+        navigationItem.rightBarButtonItems = [membersButton, wikiButton]
+        
+        
+    }
+    
+    @objc func displayWiki() {
+        let wikiViewController = WikiViewController(model:model)
+        
+        //Navegar a el, push
+        navigationController?.pushViewController(wikiViewController, animated: true)
+    }
+    
+    @objc func displayMembers() {
+        let memberListViewController = MemberListViewController(model: model.sortedMembers)
+        navigationController?.pushViewController(memberListViewController, animated: true)
+    }
+}
+
+extension HouseDetailViewController: HouseListViewControllerDelegate{
+    func houseListViewController(_ vc: HouseListViewController, didSelectHouse house: House) {
+        self.model = house
+        syncModelWithView()
+    }
+    
+    
 }

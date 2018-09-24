@@ -50,5 +50,8 @@ class PersonTests: XCTestCase {
         XCTAssertNotEqual(ned, arya)
     }
     
+    func testPersonComparaison(){
+        XCTAssertLessThan(arya, ned)
+    }
 
 }

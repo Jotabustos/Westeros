@@ -13,3 +13,5 @@ static let houseDidChangeNotificationName = "HouseDidChange"
 static let houseKey = "HouseKey"
 static let lastHouseKey = "lastHouseKey"
 }
+
+

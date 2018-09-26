@@ -12,9 +12,11 @@ import XCTest
 class RepositoryTests: XCTestCase {
 
     var localHouses: [House]!
+    var localSeasons: [Season]!
     
     override func setUp() {
        localHouses = Repository.local.houses
+       localSeasons = Repository.local.seasons
     }
 
     func testLocalRepositoryExistence() {
@@ -44,5 +46,20 @@ class RepositoryTests: XCTestCase {
         filtered = Repository.local.houses {$0.count == 100} // Devuelve un array vacio, no nil
         XCTAssertTrue(filtered.isEmpty)
     }
-
+    
+    // Seasons
+    
+    func testLocalRepositorySeasonExistence() {
+        XCTAssertNotNil(localSeasons)
+        XCTAssertEqual(localSeasons.count, 7)
+    }
+    
+    func testLocalRepositorySeasonFiltering(){
+        var filtered = Repository.local.seasons { $0.count == 10 }
+        XCTAssertEqual(filtered.count, 6) // There are 6 seasons with 10 episodes
+        
+        filtered = Repository.local.seasons {$0.count == 100} // Devuelve un array vacio, no nil
+        XCTAssertTrue(filtered.isEmpty)
+    }
+        
 }

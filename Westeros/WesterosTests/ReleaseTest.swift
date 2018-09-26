@@ -21,13 +21,13 @@ class ReleaseTest: XCTestCase {
     }
 
     func testReleaseDateExistence(){
-        let date = ReleaseTime(dateToConvert: "21-06-1994")
+        let date = ReleaseTime(dateToConvert: "1994-06-06")
         XCTAssertNotNil(date)
     }
     
     func testReleaseDateComparaison(){
-        let date = ReleaseTime(dateToConvert: "21-06-1994")
-        let now = ReleaseTime(dateToConvert: "25-09-2018")
+        let date = ReleaseTime(dateToConvert: "1994-06-06")
+        let now = ReleaseTime(dateToConvert: "1994-06-08")
         XCTAssertLessThan(date, now)
     }
 }

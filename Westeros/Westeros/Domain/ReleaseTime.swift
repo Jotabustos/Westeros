@@ -13,15 +13,15 @@ final class ReleaseTime{
     let dateConverted: Date
     
     init(dateToConvert:String){
-        let dateFormat = "dd-MM-yyyy"
+        let dateFormat = "yyyy-MM-dd"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
-        let date = dateFormatter.date(from: dateToConvert)
+        let dateNew = dateFormatter.date(from: dateToConvert)
         
-        guard date != nil else {
+        guard dateNew != nil else {
             fatalError("Incorrect Date Format")
         }
-        self.dateConverted = date!
+        self.dateConverted = dateNew!
     }
 }
 

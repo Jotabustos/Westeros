@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias EpisodesOfSeason = String
+typealias EpisodesOfSeason = Set<Episode>
 
 final class Season {
     
@@ -16,15 +16,30 @@ final class Season {
     
     let name: String
     let release: ReleaseTime
-    let episodes: EpisodesOfSeason
+    private var _episodes: EpisodesOfSeason
     
-    init(name: String, release: ReleaseTime, episodes: EpisodesOfSeason) {
+    var sortedEpisodes: [Episode] {
+        return _episodes.sorted()
+    }
+    
+    init(name: String, release: ReleaseTime) {
         self.name = name
         self.release = release
-        self.episodes = episodes
+        self._episodes = EpisodesOfSeason()
     }
     
 }
+
+extension Season {
+    var count: Int {
+        return _episodes.count
+    }
+    
+    func add(episode: Episode){
+        _episodes.insert(episode)
+    }
+}
+
 
 // MARK: - Protocols
 

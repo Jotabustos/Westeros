@@ -14,11 +14,15 @@ final class Episode {
     let name: String
     let release: ReleaseTime
     weak var season: Season?
+    let resume: String
     
-    init(name: String, release: ReleaseTime, season: Season?){
+   
+    
+    init(name: String, release: ReleaseTime, season: Season?, resume: String){
         self.name = name
         self.release = release
         self.season = season
+        self.resume = resume
     }
     
 }

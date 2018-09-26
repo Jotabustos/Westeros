@@ -15,6 +15,8 @@ final class Repository {
 
 protocol HouseFactory {
     typealias Filter = (House) -> Bool
+    typealias FilterSeason = (Season) -> Bool
+    
     var houses: [House] {
         get
     }
@@ -22,9 +24,13 @@ protocol HouseFactory {
     func house(named name: String) -> House?
     
     func houses(filteredBy: Filter ) -> [House]
+    
+    func seasons(filteredBy: FilterSeason ) -> [Season]
 }
 
 final class LocalFactory: HouseFactory {
+   
+    
     
     var houses: [House] {
         
@@ -66,4 +72,78 @@ final class LocalFactory: HouseFactory {
         return self.houses.filter(filteredBy)
             
         }
+    
+    // MARK: - SEASONS
+    
+    var seasons: [Season] {
+        
+    let season1 = Season(name: "Game of Thrones. Season 1", release: ReleaseTime(dateToConvert:"2011-04-17"))
+    let season2 = Season(name: "Game of Thrones. Season 2", release: ReleaseTime(dateToConvert:"2012-04-01"))
+    let season3 = Season(name: "Game of Thrones. Season 3", release: ReleaseTime(dateToConvert:"2013-03-31"))
+    let season4 = Season(name: "Game of Thrones. Season 4", release: ReleaseTime(dateToConvert:"2014-04-06"))
+    let season5 = Season(name: "Game of Thrones. Season 5", release: ReleaseTime(dateToConvert:"2015-04-12"))
+    let season6 = Season(name: "Game of Thrones. Season 6", release: ReleaseTime(dateToConvert:"2016-04-24"))
+    let season7 = Season(name: "Game of Thrones. Season 7", release: ReleaseTime(dateToConvert:"2017-07-16"))
+        
+    // Season 1
+    
+        for episode in episodesSeason1{
+            let newEpisode = createEpisode(chapter: episode, season: season1)
+            season1.add(episode: newEpisode)
+        }
+    
+    // Season 2
+        
+        for episode in episodesSeason2{
+            let newEpisode = createEpisode(chapter: episode, season: season2)
+            season2.add(episode: newEpisode)
+        }
+    // Season 3
+        
+        for episode in episodesSeason3{
+            let newEpisode = createEpisode(chapter: episode, season: season3)
+            season3.add(episode: newEpisode)
+        }
+    // Season 4
+        
+        for episode in episodesSeason4{
+            let newEpisode = createEpisode(chapter: episode, season: season4)
+            season4.add(episode: newEpisode)
+        }
+    // Season 5
+        
+        for episode in episodesSeason5{
+            let newEpisode = createEpisode(chapter: episode, season: season5)
+            season5.add(episode: newEpisode)
+        }
+        
+    // Season 6
+        
+        for episode in episodesSeason6{
+            let newEpisode = createEpisode(chapter: episode, season: season6)
+            season6.add(episode: newEpisode)
+        }
+        
+    // Season 7
+        
+        for episode in episodesSeason7{
+            let newEpisode = createEpisode(chapter: episode, season: season7)
+            season7.add(episode: newEpisode)
+        }
+        
+        return [season1,season2,season3,season4,season5,season6,season7]
+    }
+    
+    func createEpisode(chapter: [String: String],season: Season) -> Episode {
+        let episode = Episode(name: chapter["episodeTitle"]!, release: ReleaseTime(dateToConvert: chapter["episodeAirDate"]!), season: season, resume:  chapter["episodeDescription"]!)
+        
+        return episode
+    }
+    
+
+    func seasons(filteredBy: FilterSeason) -> [Season] {
+         return self.seasons.filter(filteredBy)
+    }
+    
+    
 }

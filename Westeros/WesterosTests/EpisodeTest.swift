@@ -18,9 +18,9 @@ class EpisodeTest: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        season = Season(name: "First Season", release: ReleaseTime(dateToConvert: "21-06-1994"), episodes: "episodes")
-        episode = Episode(name: "Cap. 1", release: ReleaseTime(dateToConvert: "21-06-1994"), season: season)
-        episode2 = Episode(name: "Cap. 2", release: ReleaseTime(dateToConvert: "28-06-1994"), season: season)
+        season = Season(name: "First Season", release: ReleaseTime(dateToConvert: "1994-06-06"))
+        episode = Episode(name: "Cap. 1", release: ReleaseTime(dateToConvert: "1994-06-06"), season: season, resume: "Resumen1")
+        episode2 = Episode(name: "Cap. 2", release: ReleaseTime(dateToConvert: "1994-07-06"), season: season, resume: "Resumen2")
     }
 
     override func tearDown() {

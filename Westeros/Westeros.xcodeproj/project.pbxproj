@@ -27,6 +27,7 @@
 		844BA34F215A373100F2C566 /* ReleaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA34E215A373100F2C566 /* ReleaseTest.swift */; };
 		844BA351215A807000F2C566 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA350215A807000F2C566 /* Episode.swift */; };
 		844BA355215A874100F2C566 /* EpisodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA354215A874100F2C566 /* EpisodeTest.swift */; };
+		844BA358215A919D00F2C566 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA357215A919D00F2C566 /* Utils.swift */; };
 		849036CD2146688F005201BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849036CC2146688F005201BD /* AppDelegate.swift */; };
 		849036D421466890005201BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849036D321466890005201BD /* Assets.xcassets */; };
 		849036D721466890005201BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849036D521466890005201BD /* LaunchScreen.storyboard */; };
@@ -71,6 +72,7 @@
 		844BA34E215A373100F2C566 /* ReleaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseTest.swift; sourceTree = "<group>"; };
 		844BA350215A807000F2C566 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		844BA354215A874100F2C566 /* EpisodeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTest.swift; sourceTree = "<group>"; };
+		844BA357215A919D00F2C566 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		849036C92146688F005201BD /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849036CC2146688F005201BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849036D321466890005201BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		844BA356215A918000F2C566 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				844BA357215A919D00F2C566 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		849036C02146688F005201BD = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 		849036EE214675D9005201BD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				844BA356215A918000F2C566 /* Utils */,
 				8405704D2149BCCE00BDCDB4 /* Repositories */,
 				849036EF214675FF005201BD /* House.swift */,
 				849036F121467F3B005201BD /* Sigil.swift */,
@@ -325,6 +336,7 @@
 				849036F221467F3B005201BD /* Sigil.swift in Sources */,
 				84425B6B21594DE2007F4131 /* Notification+Name.swift in Sources */,
 				84EA1D39215189AD00F92B06 /* MemberListViewController.swift in Sources */,
+				844BA358215A919D00F2C566 /* Utils.swift in Sources */,
 				849036F0214675FF005201BD /* House.swift in Sources */,
 				844BA347215A29CE00F2C566 /* Season.swift in Sources */,
 				849036CD2146688F005201BD /* AppDelegate.swift in Sources */,

@@ -51,3 +51,10 @@ extension ReleaseTime: Comparable {
         return lhs.proxyForComparison < rhs.proxyForComparison
     }
 }
+
+extension ReleaseTime: CustomStringConvertible{
+    var description: String {
+        return "\(dateConverted)"
+    }
+    
+}

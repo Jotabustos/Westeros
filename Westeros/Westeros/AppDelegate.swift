@@ -19,10 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         // Si window tiene un valor, hazmelo visible. Si es nil, no hace nada
-        window?.backgroundColor = .cyan
+//        window?.backgroundColor = .cyan
         
         // 1. Creamos los Modelos
         let houses = Repository.local.houses
+        
+        let seasons = Repository.local.seasons
         // 2. Creamos los controladores
         
 //        //var controllers = [UIViewController]()
@@ -38,19 +40,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let houseListViewController = HouseListViewController(model: houses)
         let lastHouseSelected = houseListViewController.lastSelectedHouse()
         
+        let seasonListViewController = SeasonListViewController(model: seasons)
+        
         // Detail
         let houseDetailViewController = HouseDetailViewController(model: lastHouseSelected)
+        
+        let seasonDetailViewController = SeasonDetailViewController(model: seasons.first!)
         
         // asignar delegados
         // Un objeto SOLO puede tener un delegado
         // Sin embargo, un objeto, SI puede ser delegado de varios otros
         houseListViewController.delegate = houseDetailViewController
+        seasonListViewController.delegate = seasonDetailViewController
+        
         
         // Crear el combinador, osea, el UISplitVC
         
         let splitViewController = UISplitViewController()
         
-        splitViewController.viewControllers = [houseListViewController.wrapperInNavigation(), houseDetailViewController.wrapperInNavigation()]
+        splitViewController.viewControllers = [seasonListViewController.wrapperInNavigation(), seasonDetailViewController.wrapperInNavigation()]
         
         // Asignamos el rootVC
         

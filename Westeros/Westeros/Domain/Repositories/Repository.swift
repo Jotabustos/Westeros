@@ -77,13 +77,13 @@ final class LocalFactory: HouseFactory {
     
     var seasons: [Season] {
         
-    let season1 = Season(name: "Game of Thrones. Season 1", release: ReleaseTime(dateToConvert:"2011-04-17"))
-    let season2 = Season(name: "Game of Thrones. Season 2", release: ReleaseTime(dateToConvert:"2012-04-01"))
-    let season3 = Season(name: "Game of Thrones. Season 3", release: ReleaseTime(dateToConvert:"2013-03-31"))
-    let season4 = Season(name: "Game of Thrones. Season 4", release: ReleaseTime(dateToConvert:"2014-04-06"))
-    let season5 = Season(name: "Game of Thrones. Season 5", release: ReleaseTime(dateToConvert:"2015-04-12"))
-    let season6 = Season(name: "Game of Thrones. Season 6", release: ReleaseTime(dateToConvert:"2016-04-24"))
-    let season7 = Season(name: "Game of Thrones. Season 7", release: ReleaseTime(dateToConvert:"2017-07-16"))
+    let season1 = Season(name: "Season 1", release: ReleaseTime(dateToConvert:"2011-04-17"))
+    let season2 = Season(name: "Season 2", release: ReleaseTime(dateToConvert:"2012-04-01"))
+    let season3 = Season(name: "Season 3", release: ReleaseTime(dateToConvert:"2013-03-31"))
+    let season4 = Season(name: "Season 4", release: ReleaseTime(dateToConvert:"2014-04-06"))
+    let season5 = Season(name: "Season 5", release: ReleaseTime(dateToConvert:"2015-04-12"))
+    let season6 = Season(name: "Season 6", release: ReleaseTime(dateToConvert:"2016-04-24"))
+    let season7 = Season(name: "Season 7", release: ReleaseTime(dateToConvert:"2017-07-16"))
         
     // Season 1
     

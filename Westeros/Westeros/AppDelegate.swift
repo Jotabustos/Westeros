@@ -41,24 +41,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let lastHouseSelected = houseListViewController.lastSelectedHouse()
         
         let seasonListViewController = SeasonListViewController(model: seasons)
+        let episodeListViewController = EpisodeListViewController(model: seasons.first!.sortedEpisodes)
         
         // Detail
         let houseDetailViewController = HouseDetailViewController(model: lastHouseSelected)
         
         let seasonDetailViewController = SeasonDetailViewController(model: seasons.first!)
         
+        let episodeDetailViewController = EpisodeDetailViewController(model: seasons.first!.sortedEpisodes.first!)
+        
         // asignar delegados
         // Un objeto SOLO puede tener un delegado
         // Sin embargo, un objeto, SI puede ser delegado de varios otros
         houseListViewController.delegate = houseDetailViewController
         seasonListViewController.delegate = seasonDetailViewController
+        episodeListViewController.delegate = episodeDetailViewController
         
         
         // Crear el combinador, osea, el UISplitVC
         
         let splitViewController = UISplitViewController()
         
-        splitViewController.viewControllers = [seasonListViewController.wrapperInNavigation(), seasonDetailViewController.wrapperInNavigation()]
+        splitViewController.viewControllers = [episodeListViewController.wrapperInNavigation(), episodeDetailViewController.wrapperInNavigation()]
         
         // Asignamos el rootVC
         

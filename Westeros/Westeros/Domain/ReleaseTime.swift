@@ -10,7 +10,7 @@ import Foundation
 
 final class ReleaseTime{
     
-    let dateConverted: Date
+    let dateConverted: String
     
     init(dateToConvert:String){
         let dateFormat = "yyyy-MM-dd"
@@ -21,7 +21,12 @@ final class ReleaseTime{
         guard dateNew != nil else {
             fatalError("Incorrect Date Format")
         }
-        self.dateConverted = dateNew!
+        
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        
+        let dateNewString = dateFormatter.string(from: dateNew!)
+        
+        self.dateConverted = dateNewString
     }
 }
 
@@ -31,7 +36,7 @@ extension ReleaseTime {
         return "\(dateConverted)"
     }
     
-    var proxyForComparison: Date {
+    var proxyForComparison: String {
         return dateConverted
     }
 }

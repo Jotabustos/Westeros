@@ -30,7 +30,7 @@ class EpisodeListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -70,6 +70,13 @@ class EpisodeListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let theEpisode = episode(at: indexPath.row)
         delegate?.episodeListViewController(self, didSelectEpisode: theEpisode)
+        
+        // Notifications
+        
+        let nc = NotificationCenter.default
+        let notification = Notification(name: .episodeDidChangeNotification, object: self, userInfo: [Constants.episodeKey : theEpisode])
+        
+        nc.post(notification)
     }
     
 }

@@ -21,7 +21,7 @@ class SeasonDetailViewController: UIViewController {
     init(model: Season){
         self.model = model
         super.init(nibName: nil, bundle: nil)
-        title = model.name
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,31 +31,56 @@ class SeasonDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-          syncModelWithView()
+        syncModelWithView()
+        setupUI()
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(seasonDidChange), name: .seasonDidChangeNotification, object: nil) // Object es el que manda la notificacion
+        syncModelWithView()
+        setupUI()
       
+    }
+    
+    @objc func seasonDidChange(notification: Notification){
+        // Sacar la info
+        guard let info = notification.userInfo, let season = info[Constants.seasonKey] as? Season
+            else { return } // Por ser opcional
+        // Actualizar el modelo
+        self.model = season
+        
+        // Sincronizar modelo - vista
+        syncModelWithView()
     }
     
     func syncModelWithView(){
         seasonNameLabel.text = "Game of Thrones \(model.name)"
         seasonReleaseTimeLabel.text = "Released in \(model.release)"
-//        title = model.name
+        title = model.name
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupUI(){
+        // Crear un boton
+        let episodesButton = UIBarButtonItem(title: "Episodes", style: .plain, target: self, action: #selector(displayEpisodes))
+        
+        // Añadir el boton
+        navigationItem.rightBarButtonItem = episodesButton
+        
+        
     }
-    */
+    
+    @objc func displayEpisodes() {
+        let episodeListViewController = EpisodeListViewController(model: model.sortedEpisodes)
+        //Navegar a el, push
+        navigationController?.pushViewController(episodeListViewController, animated: true)
+    }
+    
+  
 
 }
 
@@ -63,5 +88,6 @@ extension SeasonDetailViewController: SeasonListViewControllerDelegate{
     func seasonListViewController(_ vc: SeasonListViewController, didSelectSeason season: Season) {
         self.model = season
         syncModelWithView()
+        setupUI()
     }
 }

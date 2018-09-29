@@ -45,11 +45,39 @@ class HouseDetailViewController: UIViewController {
         syncModelWithView()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(houseDidChange), name: .houseDidChangeNotification, object: nil) // Object es el que manda la notificacion
+        setupUI()
+        
+        syncModelWithView()
+        
+    }
+    
+    // MARK: - Notifications
+    @objc func houseDidChange(notification: Notification){
+        
+        // Sacar la info
+        guard let info = notification.userInfo, let house = info[Constants.houseKey] as? House
+            else { return } // Por ser opcional
+        
+        
+        // Actualizar el modelo
+        self.model = house
+        
+        // Sincronizar modelo - vista
+        syncModelWithView()
+        
+    }
+    
+    
+    
     func syncModelWithView(){
         houseNameLabel.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = model.words
-        title = model.name
+        self.title = model.name
         
     }
     

@@ -44,6 +44,8 @@
 		849036F221467F3B005201BD /* Sigil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849036F121467F3B005201BD /* Sigil.swift */; };
 		849036F42146C194005201BD /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849036F32146C194005201BD /* PersonTests.swift */; };
 		849036F62146C1E2005201BD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849036F52146C1E2005201BD /* Person.swift */; };
+		84D95C23215E7EDB005B14E5 /* TabBarPersonalizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D95C21215E7EDB005B14E5 /* TabBarPersonalizedViewController.swift */; };
+		84D95C24215E7EDB005B14E5 /* TabBarPersonalizedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D95C22215E7EDB005B14E5 /* TabBarPersonalizedViewController.xib */; };
 		84EA1D39215189AD00F92B06 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA1D37215189AD00F92B06 /* MemberListViewController.swift */; };
 		84EA1D3A215189AD00F92B06 /* MemberListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EA1D38215189AD00F92B06 /* MemberListViewController.xib */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,8 @@
 		849036F121467F3B005201BD /* Sigil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sigil.swift; sourceTree = "<group>"; };
 		849036F32146C194005201BD /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		849036F52146C1E2005201BD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		84D95C21215E7EDB005B14E5 /* TabBarPersonalizedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPersonalizedViewController.swift; sourceTree = "<group>"; };
+		84D95C22215E7EDB005B14E5 /* TabBarPersonalizedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarPersonalizedViewController.xib; sourceTree = "<group>"; };
 		84EA1D37215189AD00F92B06 /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
 		84EA1D38215189AD00F92B06 /* MemberListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +156,8 @@
 				844BA362215DA14C00F2C566 /* EpisodeListViewController.xib */,
 				844BA365215DA46B00F2C566 /* EpisodeDetailViewController.swift */,
 				844BA366215DA46B00F2C566 /* EpisodeDetailViewController.xib */,
+				84D95C21215E7EDB005B14E5 /* TabBarPersonalizedViewController.swift */,
+				84D95C22215E7EDB005B14E5 /* TabBarPersonalizedViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 				8414C7D22150339A00077E80 /* WikiViewController.xib in Resources */,
 				844BA360215D231E00F2C566 /* SeasonDetailViewController.xib in Resources */,
 				840570412149A1B400BDCDB4 /* targaryenSmall.jpg in Resources */,
+				84D95C24215E7EDB005B14E5 /* TabBarPersonalizedViewController.xib in Resources */,
 				840111CA21515B260065D573 /* HouseListViewController.xib in Resources */,
 				84EA1D3A215189AD00F92B06 /* MemberListViewController.xib in Resources */,
 				844BA364215DA14C00F2C566 /* EpisodeListViewController.xib in Resources */,
@@ -365,6 +372,7 @@
 				844BA367215DA46B00F2C566 /* EpisodeDetailViewController.swift in Sources */,
 				84425B6B21594DE2007F4131 /* Notification+Name.swift in Sources */,
 				84EA1D39215189AD00F92B06 /* MemberListViewController.swift in Sources */,
+				84D95C23215E7EDB005B14E5 /* TabBarPersonalizedViewController.swift in Sources */,
 				844BA358215A919D00F2C566 /* Utils.swift in Sources */,
 				844BA35F215D231E00F2C566 /* SeasonDetailViewController.swift in Sources */,
 				849036F0214675FF005201BD /* House.swift in Sources */,

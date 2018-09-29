@@ -24,7 +24,7 @@ class SeasonListViewController: UITableViewController {
     init(model: [Season]){
         self.model = model
         super.init(nibName: nil, bundle: nil)
-        title = "Westeros"
+        title = "Seasons"
         
     }
     
@@ -36,7 +36,8 @@ class SeasonListViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Seasons"
+        tableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -82,6 +83,10 @@ class SeasonListViewController: UITableViewController {
         delegate?.seasonListViewController(self, didSelectSeason: theSeason)
 //        let seasonDetailViewController = SeasonDetailViewController(model:theSeason)
 //        navigationController?.pushViewController(seasonDetailViewController, animated: true)
+        let nc = NotificationCenter.default
+        let notification = Notification(name: .seasonDidChangeNotification, object: self, userInfo: [Constants.seasonKey : theSeason])
+        
+        nc.post(notification)
     }
     
 }
@@ -91,3 +96,6 @@ extension SeasonListViewController {
         return model[index]
     }
 }
+
+
+

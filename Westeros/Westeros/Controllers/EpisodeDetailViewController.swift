@@ -19,47 +19,53 @@ class EpisodeDetailViewController: UIViewController {
     init(model: Episode){
         self.model = model
         super.init(nibName: nil, bundle: nil)
+        title = model.name
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         syncModelWithView()
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(episodeDidChange), name: .episodeDidChangeNotification, object: nil) // Object es el que manda la notificacion
+        syncModelWithView()
+    }
+    
+    
+    @objc func episodeDidChange(notification: Notification){
+        // Sacar la info
+        guard let info = notification.userInfo, let episode = info[Constants.episodeKey] as? Episode
+            else { return } // Por ser opcional
+        // Actualizar el modelo
+        self.model = episode
+        
+        // Sincronizar modelo - vista
+        syncModelWithView()
     }
 
     func syncModelWithView(){
         episodeNameLabel.text = model.name
         episodeReleaseLabel.text = "Released in \(model.release)"
         episodeResumeLabel.text = model.resume
-        //        title = model.name
+        title = model.name
         
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 extension EpisodeDetailViewController: EpisodeListViewControllerDelegate{
     func episodeListViewController(_ vc: EpisodeListViewController, didSelectEpisode episode: Episode) {
         self.model = episode
+        //Navegar a el, push
+        navigationController?.pushViewController(self, animated: true)
         syncModelWithView()
     }
 }

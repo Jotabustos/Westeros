@@ -92,6 +92,26 @@ class SeasonListViewController: UITableViewController {
 }
 
 extension SeasonListViewController {
+    
+    func saveLastSelectedSeason(at row: Int){
+        // Aqui vamos a guardar la última casa seleccionada
+        let userDefaults = UserDefaults.standard
+        
+        // Lo insertamos en el diccionario de User Defaults
+        userDefaults.set(row, forKey: Constants.lastSeasonKey)
+        
+        // Guardar
+        userDefaults.synchronize() // Por si acaso
+    }
+    
+    func lastSelectedSeason() -> Season {
+        // Averiguar cual es la última row seleccionada (si la hay)
+        let row = UserDefaults.standard.integer(forKey: Constants.lastSeasonKey) // Value 0 es el default
+        return season(at: row)
+        
+    }
+    
+    
     func season(at index: Int) -> Season {
         return model[index]
     }

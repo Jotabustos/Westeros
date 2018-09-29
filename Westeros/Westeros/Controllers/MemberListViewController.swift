@@ -30,6 +30,7 @@ class MemberListViewController: UIViewController {
         super.viewDidLoad()
         // FUNDAMENTAL!!!!! No olvidarse de contar al tableview quienes son sus ayudantes (datasource y delegate)
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,5 +80,26 @@ extension MemberListViewController: UITableViewDataSource{
         return cell!
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        // Averiguar la casa en cuestion
+//        let thePerson = person(at: indexPath.row)
+//        let personDetailVC = MemberDetailViewController(model: thePerson)
+//        navigationController?.pushViewController(personDetailVC, animated: true)
+//
+//    }
     
+}
+
+extension MemberListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let thePerson = person(at: indexPath.row)
+        let personDetailVC = MemberDetailViewController(model: thePerson)
+        navigationController?.pushViewController(personDetailVC, animated: true)
+    }
+}
+
+extension MemberListViewController {
+    func person(at index: Int) -> Person {
+        return model[index]
+    }
 }

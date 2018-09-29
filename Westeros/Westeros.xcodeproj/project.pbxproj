@@ -44,6 +44,8 @@
 		849036F221467F3B005201BD /* Sigil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849036F121467F3B005201BD /* Sigil.swift */; };
 		849036F42146C194005201BD /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849036F32146C194005201BD /* PersonTests.swift */; };
 		849036F62146C1E2005201BD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849036F52146C1E2005201BD /* Person.swift */; };
+		84959782215FCA2100C0706F /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84959780215FCA2100C0706F /* MemberDetailViewController.swift */; };
+		84959783215FCA2100C0706F /* MemberDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84959781215FCA2100C0706F /* MemberDetailViewController.xib */; };
 		84D95C23215E7EDB005B14E5 /* TabBarPersonalizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D95C21215E7EDB005B14E5 /* TabBarPersonalizedViewController.swift */; };
 		84D95C24215E7EDB005B14E5 /* TabBarPersonalizedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D95C22215E7EDB005B14E5 /* TabBarPersonalizedViewController.xib */; };
 		84EA1D39215189AD00F92B06 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA1D37215189AD00F92B06 /* MemberListViewController.swift */; };
@@ -103,6 +105,8 @@
 		849036F121467F3B005201BD /* Sigil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sigil.swift; sourceTree = "<group>"; };
 		849036F32146C194005201BD /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		849036F52146C1E2005201BD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		84959780215FCA2100C0706F /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
+		84959781215FCA2100C0706F /* MemberDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberDetailViewController.xib; sourceTree = "<group>"; };
 		84D95C21215E7EDB005B14E5 /* TabBarPersonalizedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPersonalizedViewController.swift; sourceTree = "<group>"; };
 		84D95C22215E7EDB005B14E5 /* TabBarPersonalizedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarPersonalizedViewController.xib; sourceTree = "<group>"; };
 		84EA1D37215189AD00F92B06 /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				840111C821515B260065D573 /* HouseListViewController.xib */,
 				84EA1D37215189AD00F92B06 /* MemberListViewController.swift */,
 				84EA1D38215189AD00F92B06 /* MemberListViewController.xib */,
+				84959780215FCA2100C0706F /* MemberDetailViewController.swift */,
+				84959781215FCA2100C0706F /* MemberDetailViewController.xib */,
 				844BA359215D1D5100F2C566 /* SeasonListViewController.swift */,
 				844BA35A215D1D5100F2C566 /* SeasonListViewController.xib */,
 				844BA35D215D231E00F2C566 /* SeasonDetailViewController.swift */,
@@ -344,6 +350,7 @@
 				844BA35C215D1D5100F2C566 /* SeasonListViewController.xib in Resources */,
 				840570472149A32100BDCDB4 /* HouseDetailViewController.xib in Resources */,
 				8405703D2149A1AC00BDCDB4 /* codeIsComing.png in Resources */,
+				84959783215FCA2100C0706F /* MemberDetailViewController.xib in Resources */,
 				844BA368215DA46B00F2C566 /* EpisodeDetailViewController.xib in Resources */,
 				849036D721466890005201BD /* LaunchScreen.storyboard in Resources */,
 				849036D421466890005201BD /* Assets.xcassets in Resources */,
@@ -370,6 +377,7 @@
 				840570462149A32100BDCDB4 /* HouseDetailViewController.swift in Sources */,
 				849036F221467F3B005201BD /* Sigil.swift in Sources */,
 				844BA367215DA46B00F2C566 /* EpisodeDetailViewController.swift in Sources */,
+				84959782215FCA2100C0706F /* MemberDetailViewController.swift in Sources */,
 				84425B6B21594DE2007F4131 /* Notification+Name.swift in Sources */,
 				84EA1D39215189AD00F92B06 /* MemberListViewController.swift in Sources */,
 				84D95C23215E7EDB005B14E5 /* TabBarPersonalizedViewController.swift in Sources */,

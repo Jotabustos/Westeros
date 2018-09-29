@@ -14,9 +14,11 @@ static let houseKey = "HouseKey"
 static let lastHouseKey = "lastHouseKey"
 static let seasonDidChangeNotificationName = "SeasonDidChange"
 static let seasonKey = "SeasonKey"
+static let lastSeasonKey = "lastSeasonKey"
 static let episodeDidChangeNotificationName = "EpisodeDidChange"
 static let episodeKey = "EpisodeKey"
-
+static let personDidChangeNotificationName = "PersonDidChange"
+static let personKey = "PersonKey"
 }
 
 

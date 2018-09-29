@@ -82,7 +82,6 @@ class EpisodeListViewController: UITableViewController {
         let theEpisode = episode(at: indexPath.row)
         let episodeDetailVC = EpisodeDetailViewController(model: theEpisode)
         navigationController?.pushViewController(episodeDetailVC, animated: true)
-        //present(episodeDetailVC, animated: true, completion: nil)
   
     }
     

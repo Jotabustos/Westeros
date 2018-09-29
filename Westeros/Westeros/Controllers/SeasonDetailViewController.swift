@@ -16,8 +16,6 @@ class SeasonDetailViewController: UIViewController {
    
     @IBOutlet weak var seasonReleaseTimeLabel: UILabel!
     
-    
-    
     init(model: Season){
         self.model = model
         super.init(nibName: nil, bundle: nil)

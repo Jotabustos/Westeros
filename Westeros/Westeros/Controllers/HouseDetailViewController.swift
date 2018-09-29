@@ -71,6 +71,7 @@ class HouseDetailViewController: UIViewController {
         
     }
     
+
     
     
     func syncModelWithView(){

@@ -39,6 +39,7 @@ class MemberListViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(houseDidChange), name: .houseDidChangeNotification, object: nil) // Object es el que manda la notificacion
     }
     
+    
     @objc func houseDidChange(notification: Notification){
         
         // Sacar la info

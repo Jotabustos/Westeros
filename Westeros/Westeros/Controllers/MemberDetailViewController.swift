@@ -34,8 +34,9 @@ class MemberDetailViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(personDidChange), name: .personDidChangeNotification, object: nil) // Object es el que manda la notificacion
         notificationCenter.addObserver(self, selector: #selector(houseDidChange), name: .houseDidChangeNotification, object: nil) // Object es el que manda la notificacion
         syncModelWithView()
-        // Do any additional setup after loading the view.
     }
+    
+    
 
     @objc func personDidChange(notification: Notification){
         
@@ -77,16 +78,5 @@ class MemberDetailViewController: UIViewController {
         self.title = model.name
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

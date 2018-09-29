@@ -38,11 +38,6 @@ class SeasonListViewController: UITableViewController {
         super.viewDidLoad()
         title = "Seasons"
         tableView.dataSource = self
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -80,13 +75,16 @@ class SeasonListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let theSeason = season(at: indexPath.row)
+        // Delegate
         delegate?.seasonListViewController(self, didSelectSeason: theSeason)
-//        let seasonDetailViewController = SeasonDetailViewController(model:theSeason)
-//        navigationController?.pushViewController(seasonDetailViewController, animated: true)
+        // Notifications
         let nc = NotificationCenter.default
         let notification = Notification(name: .seasonDidChangeNotification, object: self, userInfo: [Constants.seasonKey : theSeason])
         
         nc.post(notification)
+        
+        // Save last selected Season
+        saveLastSelectedSeason(at: indexPath.row)
     }
     
 }
@@ -110,7 +108,6 @@ extension SeasonListViewController {
         return season(at: row)
         
     }
-    
     
     func season(at index: Int) -> Season {
         return model[index]

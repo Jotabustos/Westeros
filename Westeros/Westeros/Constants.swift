@@ -21,4 +21,3 @@ static let personDidChangeNotificationName = "PersonDidChange"
 static let personKey = "PersonKey"
 }
 
-

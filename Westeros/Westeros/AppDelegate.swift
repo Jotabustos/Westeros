@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let lastHouseSelected = houseListViewController.lastSelectedHouse()
         
         let seasonListViewController = SeasonListViewController(model: seasons)
+        let lastSeasonSelected = seasonListViewController.lastSelectedSeason()
         //let episodeListViewController = EpisodeListViewController(model: seasons.first!.sortedEpisodes)
         
         // Detail
@@ -59,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
        
-        let tabBarViewController = TabBarPersonalizedViewController(firstHouse: lastHouseSelected, firstSeason: seasons.first!)
+        let tabBarViewController = TabBarPersonalizedViewController(firstHouse: lastHouseSelected, firstSeason: lastSeasonSelected)
         
 //        let classicTabBarController = UITabBarController()
 //        classicTabBarController.viewControllers = [houseListViewController.wrapperInNavigation(),seasonListViewController.wrapperInNavigation()]

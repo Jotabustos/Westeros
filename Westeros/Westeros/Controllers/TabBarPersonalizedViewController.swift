@@ -31,36 +31,20 @@ class TabBarPersonalizedViewController: UITabBarController, UITabBarControllerDe
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
         if viewController.title == "Houses" {
-            print("House Bitch")
             let houseFirst = HouseDetailViewController(model: firstHouse)
             splitViewController?.viewControllers[1] = houseFirst.wrapperInNavigation()
             
         }
         
         if viewController.title == "Seasons" {
-             print("Season Bitch")
             let seasonFirst = SeasonDetailViewController(model: firstSeason)
             splitViewController?.viewControllers[1] = seasonFirst.wrapperInNavigation()
-            
-            
-            
         }
-        
-        
+
     }
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("ITEM Bitch")
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

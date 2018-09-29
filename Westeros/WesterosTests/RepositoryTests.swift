@@ -61,5 +61,10 @@ class RepositoryTests: XCTestCase {
         filtered = Repository.local.seasons {$0.count == 100} // Devuelve un array vacio, no nil
         XCTAssertTrue(filtered.isEmpty)
     }
+    
+    func testLocalRepositoryHouseNamedFromEnum(){
+        let houseNamedStark = Repository.local.house(named: .Lannister)
+        XCTAssertNotNil(houseNamedStark)
+    }
         
 }

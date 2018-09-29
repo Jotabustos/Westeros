@@ -36,6 +36,8 @@ class EpisodeDetailViewController: UIViewController {
         super.viewDidLoad()
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(episodeDidChange), name: .episodeDidChangeNotification, object: nil) // Object es el que manda la notificacion
+        
+        notificationCenter.addObserver(self, selector: #selector(seasonDidChange), name: .seasonDidChangeNotification, object: nil) // Object es el que manda la notificacion
         syncModelWithView()
     }
     
@@ -49,6 +51,18 @@ class EpisodeDetailViewController: UIViewController {
         //navigationController?.pushViewController(self, animated: true)
         // Sincronizar modelo - vista
         syncModelWithView()
+    }
+    
+    @objc func seasonDidChange(notification: Notification){
+        // Sacar la info
+        guard let info = notification.userInfo, let season = info[Constants.seasonKey] as? Season
+            else { return } // Por ser opcional
+        // Actualizar el modelo
+        title = season.name
+        let seasonDetailVC = SeasonDetailViewController(model: season)
+        navigationController?.pushViewController(seasonDetailVC, animated: true)
+        navigationController?.viewControllers = [seasonDetailVC]
+        
     }
 
     func syncModelWithView(){

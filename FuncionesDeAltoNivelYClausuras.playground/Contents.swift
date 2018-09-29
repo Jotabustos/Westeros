@@ -192,6 +192,13 @@ r2
 
 
 
-// Date
+// Enum
+
+enum NameOfHouses: String {
+    case Lannister
+    case Stark
+    case Targaryen
+}
+
 
 

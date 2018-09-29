@@ -68,6 +68,25 @@ final class LocalFactory: HouseFactory {
         return self.houses.filter{ $0.name.uppercased() == name.uppercased() }.first
     }
     
+    // Exercise 8
+    
+    enum HousesNamed: String {
+        case Stark
+        case Lannister
+        case Targaryen
+    }
+    
+    func house( named name: HousesNamed) -> House? {
+        switch name {
+        case HousesNamed.Stark:
+            return self.houses.filter{ $0.name.uppercased() == name.rawValue.uppercased() }.first
+        case HousesNamed.Lannister:
+            return self.houses.filter{ $0.name.uppercased() == name.rawValue.uppercased() }.first
+        case HousesNamed.Targaryen:
+            return self.houses.filter{ $0.name.uppercased() == name.rawValue.uppercased() }.first
+        }
+    }
+    
     func houses(filteredBy: Filter) -> [House] {
         return self.houses.filter(filteredBy)
             

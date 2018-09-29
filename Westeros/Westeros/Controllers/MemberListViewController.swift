@@ -14,7 +14,7 @@ class MemberListViewController: UIViewController {
      @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    let model: [Person]
+    var model: [Person]
     
     // MARK: - Initialization
     init(model: [Person]){
@@ -31,6 +31,27 @@ class MemberListViewController: UIViewController {
         // FUNDAMENTAL!!!!! No olvidarse de contar al tableview quienes son sus ayudantes (datasource y delegate)
         tableView.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(houseDidChange), name: .houseDidChangeNotification, object: nil) // Object es el que manda la notificacion
+    }
+    
+    @objc func houseDidChange(notification: Notification){
+        
+        // Sacar la info
+        guard let info = notification.userInfo, let house = info[Constants.houseKey] as? House
+            else { return } // Por ser opcional
+        
+        
+        // Actualizar el modelo
+        self.model = house.sortedMembers
+        title = house.name
+        self.tableView.reloadData()
+        
+    }
+    
 }
 
 extension MemberListViewController: UITableViewDataSource{

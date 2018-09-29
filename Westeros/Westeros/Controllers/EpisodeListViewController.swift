@@ -16,7 +16,7 @@ protocol EpisodeListViewControllerDelegate {
 
 class EpisodeListViewController: UITableViewController {
     
-    let model: [Episode]
+    var model: [Episode]
     var delegate: EpisodeListViewControllerDelegate?
     
     init(model: [Episode]) {
@@ -32,6 +32,21 @@ class EpisodeListViewController: UITableViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(seasonDidChange), name: .seasonDidChangeNotification, object: nil) // Object es el que manda la notificacion
+    }
+    
+    @objc func seasonDidChange(notification: Notification){
+        // Sacar la info
+        guard let info = notification.userInfo, let season = info[Constants.seasonKey] as? Season
+            else { return } // Por ser opcional
+        // Actualizar el modelo
+        self.model = season.sortedEpisodes
+        title = season.name
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+        
+        
     }
 
     // MARK: - Table view data source

@@ -10,6 +10,7 @@ import Foundation
 
 typealias Words = String
 typealias Members = Set<Person>
+typealias HousesEnum = String
 
 final class House {
     let name: String
@@ -56,6 +57,7 @@ extension House {
         persons.forEach {add(person: $0)}
     }
 }
+
 
 extension House {
     var proxyForEquality: String {

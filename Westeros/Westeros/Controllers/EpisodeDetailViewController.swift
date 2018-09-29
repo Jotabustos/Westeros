@@ -46,7 +46,7 @@ class EpisodeDetailViewController: UIViewController {
             else { return } // Por ser opcional
         // Actualizar el modelo
         self.model = episode
-        
+        //navigationController?.pushViewController(self, animated: true)
         // Sincronizar modelo - vista
         syncModelWithView()
     }
@@ -65,7 +65,7 @@ extension EpisodeDetailViewController: EpisodeListViewControllerDelegate{
     func episodeListViewController(_ vc: EpisodeListViewController, didSelectEpisode episode: Episode) {
         self.model = episode
         //Navegar a el, push
-        navigationController?.pushViewController(self, animated: true)
+        //navigationController?.pushViewController(self, animated: true)
         syncModelWithView()
     }
 }

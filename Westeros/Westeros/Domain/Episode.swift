@@ -17,7 +17,7 @@ final class Episode {
     let resume: String
     
    
-    
+    // MARK: - Initialization
     init(name: String, release: ReleaseTime, season: Season?, resume: String){
         self.name = name
         self.release = release

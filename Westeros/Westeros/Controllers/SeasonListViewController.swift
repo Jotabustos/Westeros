@@ -16,7 +16,7 @@ protocol SeasonListViewControllerDelegate {
 
 class SeasonListViewController: UITableViewController {
     
-    
+    // MARK: - Properties
     let model: [Season]
     var delegate: SeasonListViewControllerDelegate?
     
@@ -88,6 +88,8 @@ class SeasonListViewController: UITableViewController {
     }
     
 }
+
+// MARK: - Persistence (UserDefaults)
 
 extension SeasonListViewController {
     

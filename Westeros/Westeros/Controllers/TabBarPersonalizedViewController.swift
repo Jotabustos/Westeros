@@ -10,9 +10,11 @@ import UIKit
 
 class TabBarPersonalizedViewController: UITabBarController, UITabBarControllerDelegate {
 
+    // MARK: - Properties
     let firstHouse: House
     let firstSeason: Season
     
+     // MARK: - Initialization
     init(firstHouse: House, firstSeason: Season){
         self.firstHouse = firstHouse
         self.firstSeason = firstSeason
@@ -28,6 +30,7 @@ class TabBarPersonalizedViewController: UITabBarController, UITabBarControllerDe
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Delegate
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
         if viewController.title == "Houses" {
@@ -41,9 +44,6 @@ class TabBarPersonalizedViewController: UITabBarController, UITabBarControllerDe
             splitViewController?.viewControllers[1] = seasonFirst.wrapperInNavigation()
         }
 
-    }
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        
     }
     
 

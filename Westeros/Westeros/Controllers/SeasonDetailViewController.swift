@@ -9,13 +9,16 @@
 import UIKit
 
 class SeasonDetailViewController: UIViewController {
-
+    
+    // MARK: - Properties
     var model: Season
     
+    // MARK: - Outlets
     @IBOutlet weak var seasonNameLabel: UILabel!
    
     @IBOutlet weak var seasonReleaseTimeLabel: UILabel!
     
+     // MARK: - Initialization
     init(model: Season){
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -29,10 +32,6 @@ class SeasonDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        syncModelWithView()
-        setupUI()
-        
-        
     }
     
     override func viewDidLoad() {
@@ -82,6 +81,7 @@ class SeasonDetailViewController: UIViewController {
 
 }
 
+// MARK: - Delegate
 extension SeasonDetailViewController: SeasonListViewControllerDelegate{
     func seasonListViewController(_ vc: SeasonListViewController, didSelectSeason season: Season) {
         self.model = season

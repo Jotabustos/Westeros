@@ -10,8 +10,10 @@ import Foundation
 
 final class ReleaseTime{
     
+    // MARK: - Properties
     let dateConverted: String
     
+    // MARK: - Initialization
     init(dateToConvert:String){
         let dateFormat = "yyyy-MM-dd"
         let dateFormatter = DateFormatter()
@@ -30,6 +32,7 @@ final class ReleaseTime{
     }
 }
 
+// MARK: - Protocols
 
 extension ReleaseTime {
     var proxyForEquality: String {

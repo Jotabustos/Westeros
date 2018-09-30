@@ -22,6 +22,7 @@ final class Season {
         return _episodes.sorted()
     }
     
+     // MARK: - Initialization
     init(name: String, release: ReleaseTime) {
         self.name = name
         self.release = release

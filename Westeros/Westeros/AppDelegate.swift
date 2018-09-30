@@ -42,46 +42,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let seasonListViewController = SeasonListViewController(model: seasons)
         let lastSeasonSelected = seasonListViewController.lastSelectedSeason()
-        //let episodeListViewController = EpisodeListViewController(model: seasons.first!.sortedEpisodes)
         
         // Detail
         let houseDetailViewController = HouseDetailViewController(model: lastHouseSelected)
         
-        //let seasonDetailViewController = SeasonDetailViewController(model: seasons.first!)
-        
-        //let episodeDetailViewController = EpisodeDetailViewController(model: seasons.first!.sortedEpisodes.first!)
-        
-        // asignar delegados
+        // Asignar delegados
         // Un objeto SOLO puede tener un delegado
         // Sin embargo, un objeto, SI puede ser delegado de varios otros
+        
         houseListViewController.delegate = houseDetailViewController
-        //seasonListViewController.delegate = seasonDetailViewController
-        //episodeListViewController.delegate = episodeDetailViewController
         
+       // Crear TabBar personalizado pasando como parametros la primera y la ultima casa seleccionada en User Defaults
         
-       
         let tabBarViewController = TabBarPersonalizedViewController(firstHouse: lastHouseSelected, firstSeason: lastSeasonSelected)
-        
-//        let classicTabBarController = UITabBarController()
-//        classicTabBarController.viewControllers = [houseListViewController.wrapperInNavigation(),seasonListViewController.wrapperInNavigation()]
         
         tabBarViewController.viewControllers = [houseListViewController.wrapperInNavigation(),seasonListViewController.wrapperInNavigation()]
         
         tabBarViewController.delegate = tabBarViewController
         
-        // Crear el combinador, osea, el UISplitVC
+        // Crear SplitView
         
         let splitViewController = UISplitViewController()
         
         splitViewController.viewControllers = [tabBarViewController, houseDetailViewController.wrapperInNavigation()]
         
         // Asignamos el rootVC
-        
-        
-//        let t1 = EpisodeListViewController(model: seasons.first!.sortedEpisodes)
-//        let t2 = EpisodeDetailViewController(model: seasons.first!.sortedEpisodes.first!)
-//
-//        splitViewController.viewControllers = [t1.wrapperInNavigation(), t2.wrapperInNavigation()]
         
         window?.rootViewController = splitViewController
         window?.makeKeyAndVisible() 

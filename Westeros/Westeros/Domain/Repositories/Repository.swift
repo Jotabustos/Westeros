@@ -68,7 +68,7 @@ final class LocalFactory: HouseFactory {
         return self.houses.filter{ $0.name.uppercased() == name.uppercased() }.first
     }
     
-    // Exercise 8
+    // MARK: - Exercise 8
     
     enum HousesNamed: String {
         case Stark
@@ -152,6 +152,7 @@ final class LocalFactory: HouseFactory {
         
         return [season1,season2,season3,season4,season5,season6,season7]
     }
+    
     
     func createEpisode(chapter: [String: String],season: Season) -> Episode {
         let episode = Episode(name: chapter["episodeTitle"]!, release: ReleaseTime(dateToConvert: chapter["episodeAirDate"]!), season: season, resume:  chapter["episodeDescription"]!)

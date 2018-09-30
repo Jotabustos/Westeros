@@ -39,10 +39,6 @@ class HouseDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
-        
-        setupUI()
-        
-        syncModelWithView()
     }
     
     override func viewDidLoad() {

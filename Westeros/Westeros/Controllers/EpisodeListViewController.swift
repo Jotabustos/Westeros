@@ -16,9 +16,11 @@ protocol EpisodeListViewControllerDelegate {
 
 class EpisodeListViewController: UITableViewController {
     
+    // MARK: - Properties
     var model: [Episode]
     var delegate: EpisodeListViewControllerDelegate?
     
+     // MARK: - Initialization
     init(model: [Episode]) {
         self.model = model
         super.init(nibName: nil, bundle: nil)

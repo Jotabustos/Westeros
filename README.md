@@ -1,5 +1,5 @@
 # Westeros
-`Westeros` is an iOS Game of Thrones app developed in Swift 4.
+`Westeros` is an iOS Game of Thrones app developed in Swift 4. UI enhanced for iPad Pro (9.7-inch) in landscape mode.
 
 ## How to build
 
